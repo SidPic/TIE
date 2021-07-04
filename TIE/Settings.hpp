@@ -37,6 +37,7 @@ public:
 
     friend class Pos;
     friend class LitePos;
+    friend class Window;
 
 };
 

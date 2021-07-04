@@ -4,6 +4,7 @@ files='
     example.cpp
     TIE/Settings.cpp
     TIE/LitePos.cpp
+    TIE/Window.cpp
     TIE/Vec2.cpp
     TIE/Pos.cpp
 '
