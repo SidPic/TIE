@@ -2,17 +2,19 @@
 #define TIE_POS_HPP
 
 #include "Vec2.hpp"
+#include "LitePos.hpp"
 
 namespace tie
 {
 
-class Pos
+class Pos : public LitePos  /// faster for geterrs than LitePos
 {
 private:
 
     /////////// Coordinates ////////////
 
-    Vec2 pixels, tiles;
+    /// + 'Vec2 pixels' from LitePos
+    Vec2 tiles;
 
 public:
 
@@ -23,49 +25,42 @@ public:
 
     //////// Full constructors /////////
 
-    Pos   (const Vec2&);
+    Pos (const Vec2&);
+    Pos (const LitePos&);
     Pos (float x, float y);
 
     ///////////// Getters //////////////
 
-    Vec2 asTiles  (void) const;
-    Vec2 asPixels (void) const;
+    virtual Vec2 asTiles  (void) const override;
+    /// 'Vec2 asPixels (void) const' identical to LitePos realization
 
     ///////////// Setters //////////////
 
-    void set    (const Vec2&);
-    void set (float x, float y);
+    virtual void set    (const Vec2&)   override;
+    virtual void set (float x, float y) override;
 
     //////////// Operators /////////////
 
     /////////// assignment /////////////
 
-    void operator= (const Pos&);
-    void operator= (const Vec2&);
+    virtual void operator=  (const Vec2&)   override;
+    virtual void operator= (const LitePos&) override;
 
     ///////// with assignment //////////
 
-    void operator+= (const Pos&);
-    void operator-= (const Pos&);
-    void operator*= (const Pos&);
-    void operator/= (const Pos&);
+    virtual void operator+= (const Vec2&) override;
+    virtual void operator-= (const Vec2&) override;
+    virtual void operator*= (const Vec2&) override;
+    virtual void operator/= (const Vec2&) override;
 
-    void operator+= (const Vec2&);
-    void operator-= (const Vec2&);
-    void operator*= (const Vec2&);
-    void operator/= (const Vec2&);
+    virtual void operator+= (const LitePos&) override;
+    virtual void operator-= (const LitePos&) override;
+    virtual void operator*= (const LitePos&) override;
+    virtual void operator/= (const LitePos&) override;
 
     /////// without assignment /////////
 
-    Pos operator+ (const Pos&) const;
-    Pos operator- (const Pos&) const;
-    Pos operator* (const Pos&) const;
-    Pos operator/ (const Pos&) const;
-
-    Pos operator+ (const Vec2&) const;
-    Pos operator- (const Vec2&) const;
-    Pos operator* (const Vec2&) const;
-    Pos operator/ (const Vec2&) const;
+    /// identical to LitePos realization
 
 };
 

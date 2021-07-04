@@ -36,6 +36,7 @@ public:
     ///////////  Friends ////////////
 
     friend class Pos;
+    friend class LitePos;
 
 };
 

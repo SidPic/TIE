@@ -2,6 +2,7 @@
 #define TIE_ALL_HPP
 
 #include "Settings.hpp"
+#include "LitePos.hpp"
 #include "Vec2.hpp"
 #include "Pos.hpp"
 

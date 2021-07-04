@@ -3,6 +3,7 @@
 files='
     example.cpp
     TIE/Settings.cpp
+    TIE/LitePos.cpp
     TIE/Vec2.cpp
     TIE/Pos.cpp
 '
