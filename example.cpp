@@ -6,6 +6,17 @@ using namespace tie;
 
 int main ()
 {
+    Map map(10, 10);
+    map.fill(2).set(0, 4, 8);
+
+    for (int y = 0; y < map.getSize().y; ++y)
+    {
+        for (int x = 0; x < map.getSize().x; ++x)
+        {
+            std::cout << map.get(x, y);
+        }
+        std::cout << std::endl;
+    }
     Pos p(12, 21);
     LitePos* pos;
     pos = &p;

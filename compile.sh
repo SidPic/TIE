@@ -7,6 +7,7 @@ files='
     TIE/Window.cpp
     TIE/Vec2.cpp
     TIE/Pos.cpp
+    TIE/Map.cpp
 '
 
 flags='
@@ -24,7 +25,7 @@ libs='
 '
 
 g++ $flags -c $files\
-   && g++ *.o -o example $libs\
+    && g++ *.o -o example $libs\
         && echo "Игра успешно скомпилирована в файл 'example'"
 
 rm *.o

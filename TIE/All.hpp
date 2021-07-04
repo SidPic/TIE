@@ -7,6 +7,7 @@
 #include "LitePos.hpp"
 #include "Vec2.hpp"
 #include "Pos.hpp"
+#include "Map.hpp"
 
 /// SFML integration
 
